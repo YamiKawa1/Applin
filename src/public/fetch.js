@@ -7,31 +7,36 @@ const getData = ()=> {
     fetch(url, options)
     .then(result =>{
         if (result.status == 204) {
-            alert(result.message)
+            alert('there is no data, yet')
         
         } else if (result.status >= 400) {
-            alert(result.message);
+            alert('internal error');
 
         } else if (result.status == 200) {
-        return result.json()
-
+            return result.json()
        } 
     })
     .then(result => {
-        result.data.map(data => {
-            data.skus.map(sku => {
-                let newRow = document.createElement('tr')
-                newRow.innerHTML = `
-                    <tr>
-                        <td>${data.id}</td>
-                        <td>${sku.name}</td>
-                        <td>${sku.quantity}</td>
-                    </tr>
-                `
-                document.getElementById('table-body').append(newRow);
-            });
-        })
-    });
+        if (result) {
+            let index = 1;
+            result.data.map((data) => {
+                data.skus.map(sku => {
+                    let newRow = document.createElement('tr')
+                    newRow.innerHTML = `
+                        <tr>
+                            <th>${index}</th>
+                            <td>${data.id}</td>
+                            <td>${sku.name}</td>
+                            <td>${sku.quantity}</td>
+                        </tr>
+                    `
+                    document.getElementById('table-body').append(newRow);
+                    index+=1;
+                });
+            })  
+        }
+    })
+    .catch(error=> console.log(error))
 }
 getData();
 
