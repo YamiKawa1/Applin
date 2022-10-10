@@ -4,11 +4,13 @@
 
 ## lamento la tardanza, pero fue un fin de seaman muy ocupado, asi que lo hice entre viernes y la manana del lunes
 
-## El proyecto require de un .env file en la razi con el siguiente formato
+## El proyecto require de un .env file en la raiz con el siguiente formato:
 
-MONGODB_URI: 'mongodb+srv://<User>:<password>@cluster0.z2cppi5.mongodb.net/?retryWrites=true&w=majority'
+MONGODB_URI: 'mongodb+srv://*YourUser*:*YourPassword*@*YourCluster*'
 
 PORT: 4001
 HOST: 'localhost'
 
 ## Para iniciar el proyecto basta con un npm run start en la raiz
+
+## quise agregar test, pero no queria tardar mas y no se como hacerlo cuando hay que enviar un archivo
