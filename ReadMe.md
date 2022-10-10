@@ -13,4 +13,4 @@ HOST: 'localhost'
 
 ## Para iniciar el proyecto basta con un npm run start en la raiz
 
-## quise agregar test, pero no queria tardar mas y no se como hacerlo cuando hay que enviar un archivo
+## quise agregar test, pero no queria tardar mas y todavia no se como hacerlo cuando hay que enviar un archivo
